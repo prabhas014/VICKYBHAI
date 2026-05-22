@@ -9,6 +9,10 @@
 <body>
 
     <!-- Main Content -->
+    <!-- Instruction Banner -->
+    <div id="click-banner" style="position: fixed; top: 0; left: 0; width: 100%; background: red; color: yellow; text-align: center; padding: 10px; font-size: 20px; z-index: 10000; cursor: pointer; border-bottom: 3px dashed yellow; animation: blinker 1s infinite;">
+        🚨 CLICK ANYWHERE TO BLAST THE MUSIC! 🚨
+    </div>
     <div id="main-content">
         <h1 class="rainbow-text blink">🌟 KALA JAMUN 🌟</h1>
         
@@ -42,9 +46,7 @@
     </div>
 
     <!-- YouTube Audio Player Container -->
-    <div id="audio-container">
-        <iframe width="1" height="1" src="https://www.youtube.com/embed/qk2WMmiiVFE?autoplay=1&loop=1&playlist=qk2WMmiiVFE" frameborder="0" allow="autoplay" style="position: absolute; top: -9999px; left: -9999px;"></iframe>
-    </div>
+    <div id="player" style="position: absolute; top: -9999px; left: -9999px;"></div>
 
     <script src="script.js"></script>
 </body>
