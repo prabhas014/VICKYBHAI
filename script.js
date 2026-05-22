@@ -29,14 +29,18 @@ function onPlayerReady(event) {
 }
 
 // Unmute and play on first click anywhere
-document.body.addEventListener('click', function() {
+window.addEventListener('click', function handleFirstClick() {
     if (player && typeof player.unMute === 'function') {
         player.unMute();
         player.setVolume(100);
+        player.playVideo(); // Force play in case it was paused
         const banner = document.getElementById('click-banner');
         if(banner) banner.style.display = 'none';
+        
+        // Remove listener only after it successfully plays
+        window.removeEventListener('click', handleFirstClick);
     }
-}, { once: true });
+});
 
 // Add some random movement to the dog gifs for extra chaos
 setInterval(() => {
