@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+    background: repeating-radial-gradient(
+        circle,
+        #ff0000,
+        #ff0000 10px,
+        #ffff00 10px,
+        #ffff00 20px
+    );
+    color: white;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+#entry-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: lime;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#entry-overlay h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px red;
+    animation: shake 0.5s infinite;
+}
+
+#enter-btn {
+    padding: 20px 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: red;
+    color: yellow;
+    border: 5px dashed yellow;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: transform 0.2s;
+}
+
+#enter-btn:hover {
+    transform: scale(1.2);
+    background-color: yellow;
+    color: red;
+    border-color: red;
+}
+
+.rainbow-text {
+    font-size: 4rem;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-top: 20px;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.card {
+    background: magenta;
+    border: 10px solid lime;
+    border-radius: 15px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 10px 10px 30px black;
+}
+
+.funny-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 5px dotted cyan;
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Animations */
+.spin-slow {
+    animation: spin 4s linear infinite;
+}
+
+.spin-fast {
+    animation: spin 0.5s linear infinite;
+}
+
+.bounce {
+    animation: bounce 1s infinite alternate;
+}
+
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-50px); }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Dog GIFs */
+.dog-gif {
+    position: fixed;
+    width: 150px;
+    z-index: 1000;
+    pointer-events: none; /* So they don't block clicks */
+}
+
+.top-left { top: 20px; left: 20px; animation: bounce 2s infinite alternate; }
+.bottom-right { bottom: 20px; right: 20px; animation: spin 5s infinite; }
+.center-right { top: 50%; right: 50px; transform: translateY(-50%); animation: shake 1s infinite; }
+.bottom-left { bottom: 20px; left: 20px; animation: bounce 1.5s infinite alternate-reverse; }
